@@ -31,6 +31,8 @@ ul {
 #chapters-title {
     padding: 0px;
     margin: 0px;
+    font-size: 20px;
+    font-weight: 800;
     padding-top: 20px;
     align-self: flex-start; /* Move title to the left in flex container */
     text-align: left;       /* Ensure text is left-aligned */
