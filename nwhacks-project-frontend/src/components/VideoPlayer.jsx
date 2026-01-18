@@ -39,7 +39,7 @@ const plyrProps = {
 }
 
 
-export default function VideoPlayer(chapters, videoSrc) {
+export default function VideoPlayer({chapters, videoSrc}) {
     return (
         <div id='video-player'>
             <Plyr {...{
@@ -76,5 +76,5 @@ export default function VideoPlayer(chapters, videoSrc) {
               },
             }} />
                     </div>
-                )
+    )
 }

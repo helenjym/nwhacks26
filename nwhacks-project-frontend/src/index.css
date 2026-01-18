@@ -66,3 +66,11 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+#left-panel {
+  background-color:rgba(255, 210, 210, 0.87)
+}
+
+#right-panel {
+  background-color:rgba(210, 255, 210, 0.87)
+}
