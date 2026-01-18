@@ -1,0 +1,36 @@
+#video-player {
+    width: 55vw;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+/* Example: Change the color of the play button */
+.plyr__control.plyr__control--overlaid {
+    background-color: #ff0000; /* Your custom color */
+  }
+  
+  /* Example: Adjust the progress bar color */
+.plyr__progress.plyr__progress--overlaid {
+   color: #9caeff; /* Your custom accent color */
+}
+
+.plyr {
+  --plyr-color-main: #ff0000; /* Changes the primary accent color to red */
+  --plyr-control-spacing: 10px; /* Adjusts spacing around controls */
+  /* Add more overrides here */
+  width: 50vw;
+  height: 100vh;
+}
+
+#video-placeholder {
+  width: 50vw;
+  height: 100vh;
+  background-color: rgb(255, 238, 216);
+  border-style: solid;
+  border-width: 0.5px;
+  text-align: center;
+}
+
+
