@@ -9,13 +9,19 @@ function App() {
 
   const [videoSrc, setVideoSrc] = useState(null);
   const [chapters, setChapters] = useState([]);
+  // const [flashcards, setFlashcards] = useState([]);
 
+  // const flashcards = [
+  //   { question: "what", answer: "this" },
+  //   { question: "where", answer: "here" },
+  //   { question: "who", answer: "us" }];
+
+  const flashcards = [];
   async function handleVideoUpload(e) {
     const file = e.target.files[0];
     const url = URL.createObjectURL(file);
     console.log(url);
     setVideoSrc(url);
-    
 
     try {
       const formData = new FormData();
@@ -43,11 +49,13 @@ function App() {
           Upload Video
           <input id="video-file-upload" onChange={handleVideoUpload} accept="video/mp4" type='file'></input>
         </label>
-        <ControlPanel chapters={chapters}/>
+        
+        <ControlPanel chapters={chapters} flashcards={flashcards} />
       </div>
       <div id='right-panel'>
         <VideoPlayer chapters={chapters} videoSrc={videoSrc}/>
       </div>
+      
     </div>
   )
 }

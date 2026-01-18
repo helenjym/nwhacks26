@@ -1,0 +1,52 @@
+.flashcard-overlay {
+    position: fixed;        /* ← THIS is what makes it a popup */
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  .flashcard-popup {
+    background: white;
+    padding: 1.5rem;
+    width: 400px;
+    border-radius: 8px;
+    position: relative;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    cursor: pointer;
+  }
+  
+  /* Card */
+  .flashcard-card {
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 1rem 0;
+    cursor: pointer;
+    text-align: center;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .flashcard-controls {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .flashcard-progress {
+    text-align: center;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: #666;
+  }
+  
