@@ -1,6 +1,5 @@
 import json
 import os
-import sys
 import re
 from typing import List, Dict, Tuple, Any
 import google.generativeai as genai
@@ -70,19 +69,6 @@ def create_transcript_text(segments: List[Dict[str, Any]]) -> str:
     
     return "\n".join(transcript_parts)
 
-def call_gemini_for_chapters(transcript_text: str, model_name: str = "gemini-2.5-flash") -> Dict[str, Any]:
-    """
-    Call Gemini API to identify chapters in the transcript.
-    
-    Args:
-        transcript_text: Transcript text with timestamps
-        model_name: Name of the Gemini model to use
-        
-    Returns:
-        Dictionary containing chapter information
-    """
-    model = genai.GenerativeModel(model_name)
-    
 def call_gemini_for_chapters(transcript_text: str, max_chapters: int = 12, model_name: str = "gemini-2.5-flash") -> Dict[str, Any]:
     """
     Call Gemini API to identify chapters in the transcript.
@@ -320,10 +306,50 @@ def save_chapters_to_file(chapters: List[Dict[str, Any]], output_path: str) -> N
     for i, chapter in enumerate(chapters, 1):
         print(f"  {i}. {chapter['chapter_name']} ({chapter['start_time']:.2f}s - {chapter['end_time']:.2f}s)")
 
+def generate_chapters(segments: List[Dict[str, Any]], max_chapters: int = 12) -> List[Dict[str, Any]]:
+    """
+    Generate chapters from transcript segments using Gemini API.
+    
+    Args:
+        segments: List of transcript segments
+        max_chapters: Maximum number of chapters to generate
+        
+    Returns:
+        List of chapter dictionaries with chapter_name, start_time, end_time
+    """
+    # Create transcript text from all segments
+    print("Creating transcript text from segments...")
+    transcript_text = create_transcript_text(segments)
+    print(f"Created transcript text of length: {len(transcript_text)}")
+    
+    # Process the entire transcript with Gemini API
+    print(f"Processing transcript with Gemini API (max {max_chapters} chapters)...")
+    chapters_response = call_gemini_for_chapters(transcript_text, max_chapters)
+    print(f"Received chapters: {chapters_response}")
+    
+    # Extract chapters from the response
+    final_chapters = []
+    if chapters_response.get("chapters"):
+        print(f"Found {len(chapters_response['chapters'])} chapters")
+        final_chapters = chapters_response["chapters"]
+        # Ensure chapters cover the entire video
+        final_chapters = ensure_full_coverage(final_chapters, segments)
+        # Align timestamps with segment boundaries
+        for chapter in final_chapters:
+            chapter["start_time"] = align_time_to_segment(chapter["start_time"], segments)
+            chapter["end_time"] = align_time_to_segment(chapter["end_time"], segments)
+    else:
+        print("No chapters found in the response")
+    
+    print(f"Final chapters after processing: {final_chapters}")
+    return final_chapters
+
 def main():
     """
     Main function to process transcript segments and generate chapters.
     """
+    import sys
+    
     # Default input and output paths
     default_input = "data/transcripts/transcription_segments.json"
     default_output = "data/chapters.json"
@@ -338,34 +364,8 @@ def main():
         segments = load_transcript_segments(input_path)
         print(f"Loaded {len(segments)} transcript segments")
         
-        # Create transcript text from all segments
-        print("Creating transcript text from all segments...")
-        transcript_text = create_transcript_text(segments)
-        print(f"Created transcript text of length: {len(transcript_text)}")
-        
-        # Set maximum chapters (default: 12)
-        max_chapters = 12
-        
-        # Process the entire transcript with Gemini API
-        print(f"Processing entire transcript with Gemini API (max {max_chapters} chapters)...")
-        chapters = call_gemini_for_chapters(transcript_text, max_chapters)
-        print(f"Received chapters: {chapters}")
-        
-        # Extract chapters from the response
-        final_chapters = []
-        if chapters.get("chapters"):
-            print(f"Found {len(chapters['chapters'])} chapters")
-            final_chapters = chapters["chapters"]
-            # Ensure chapters cover the entire video
-            final_chapters = ensure_full_coverage(final_chapters, segments)
-            # Align timestamps with segment boundaries
-            for chapter in final_chapters:
-                chapter["start_time"] = align_time_to_segment(chapter["start_time"], segments)
-                chapter["end_time"] = align_time_to_segment(chapter["end_time"], segments)
-        else:
-            print("No chapters found in the response")
-        
-        print(f"Final chapters after processing: {final_chapters}")
+        # Generate chapters
+        final_chapters = generate_chapters(segments)
         
         # Save chapters to file
         save_chapters_to_file(final_chapters, output_path)
