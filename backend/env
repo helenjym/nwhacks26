@@ -1,0 +1,5 @@
+GEMINI_API_KEY="AIzaSyD1o7SoD5bXtuqTxIo5i_rILonF76asp14"
+
+# Flask Configuration
+FLASK_ENV=development
+FLASK_DEBUG=1
