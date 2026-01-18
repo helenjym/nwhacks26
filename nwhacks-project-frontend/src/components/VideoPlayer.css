@@ -1,3 +1,17 @@
 #video-player {
-    padding: 10px;
+    padding-left: 10px;
+    width: 400px;
+    height: 500px;
+
 }
+
+/* Example: Change the color of the play button */
+.plyr__control.plyr__control--overlaid {
+    background-color: #ff0000; /* Your custom color */
+  }
+  
+  /* Example: Adjust the progress bar color */
+.plyr__progress.plyr__progress--played {
+   color: #9caeff; /* Your custom accent color */
+}
+  

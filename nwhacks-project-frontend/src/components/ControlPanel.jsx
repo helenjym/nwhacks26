@@ -1,10 +1,11 @@
 import './ControlPanel.css'
 
-
-export default function ControlPanel() {
+export default function ControlPanel(chapters) {
     return (
         <div id='control-panel'>
-            <div></div>
+            {chapters.map((chapter) =>
+                <p>{chapter}</p>
+            )}
         </div>
     )
 }

@@ -6,12 +6,27 @@ import VideoPlayer from './components/VideoPlayer.jsx'
 import ControlPanel from './components/ControlPanel.jsx'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const [videoSrc, setVideoSrc] = useState(null);
+  const [chapters, setChapters] = useState();
+
+  function handleVideoUpload(e) {
+    const file = e.target.files[0];
+    const url = URL.createObjectURL(file);
+    console.log(url);
+    setVideoSrc(url);
+    // send file to backend for processing and get markers
+    // update markers, temp markers for now
+    setChapters([{time: 10, label: "Sample Marker 1"}, {time: 30, label: "Sample Marker 2"}]);
+  }
 
   return (
     <div id="app">
-      <ControlPanel />
-      <VideoPlayer />
+      <ControlPanel chapters={chapters}/>
+      <div>
+        <input onChange={handleVideoUpload} accept="video/mp4" type='file'></input>
+        <VideoPlayer chapters={chapters} videoSrc={videoSrc}/>
+      </div>
     </div>
   )
 }
