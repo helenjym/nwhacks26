@@ -1,0 +1,25 @@
+# Video
+*.mp4
+*.mkv
+*.avi
+*.mov
+*.wmv
+*.flv
+*.webm
+*.mpeg
+*.mpg
+*.m4v
+*.3gp
+
+# Audio
+*.mp3
+*.wav
+*.flac
+*.aac
+*.ogg
+*.opus
+*.m4a
+*.wma
+*.aiff
+
+.env

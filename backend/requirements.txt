@@ -1,0 +1,4 @@
+openai-whisper
+google-generativeai
+python-dotenv
+Flask>=3.0.0
