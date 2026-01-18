@@ -1,9 +1,12 @@
 import whisper
 import json
-
+import sys
 
 model = whisper.load_model("base")
-filename = "Theunhingedworldoftech.mp4"
+if len(sys.argv) > 1:
+    filename = sys.argv[1]
+else:
+    filename = "Theunhingedworldoftech.mp4"
 audio_file = f"data/videos/{filename}"
 
 print("Starting transcription...")
