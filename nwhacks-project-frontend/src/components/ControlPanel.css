@@ -1,0 +1,10 @@
+#control-panel {
+    width: 300px;
+    height: 400px;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+}
+
+#video-upload{
+    width: 10px;
+}
