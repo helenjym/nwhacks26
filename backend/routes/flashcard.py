@@ -2,10 +2,20 @@
 
 from dotenv import load_dotenv
 from typing import List, Dict, Any
-from .chunkText import get_chunks
 import json
 import os
 import requests
+import time
+
+# Handle import for both module and standalone script usage
+try:
+    from .chunkText import get_chunks
+except ImportError:
+    # Fallback for when running as standalone script
+    import sys
+    from pathlib import Path
+    sys.path.insert(0, str(Path(__file__).parent.parent))
+    from routes.chunkText import get_chunks
 
 load_dotenv()
 
@@ -42,14 +52,38 @@ def generate_flashcards(text: str, count: int = 2) -> List[Dict[str, str]]:
         ]
     }
 
-    response = requests.post(
-        f"{GEMINI_API_URL}?key={GEMINI_API_KEY}",
-        headers=headers,
-        json=data,
-        timeout=60
-    )
-
-    response.raise_for_status()
+    # Retry logic for rate limiting (429 errors)
+    max_retries = 3
+    retry_delay = 2  # seconds
+    
+    for attempt in range(max_retries):
+        try:
+            response = requests.post(
+                f"{GEMINI_API_URL}?key={GEMINI_API_KEY}",
+                headers=headers,
+                json=data,
+                timeout=60
+            )
+            
+            # If we get a 429, wait and retry
+            if response.status_code == 429:
+                if attempt < max_retries - 1:
+                    wait_time = retry_delay * (2 ** attempt)  # Exponential backoff
+                    print(f"⚠️  Rate limit hit (429). Waiting {wait_time}s before retry {attempt + 1}/{max_retries}...")
+                    time.sleep(wait_time)
+                    continue
+                else:
+                    response.raise_for_status()
+            else:
+                response.raise_for_status()
+                break
+        except requests.exceptions.HTTPError as e:
+            if e.response.status_code == 429 and attempt < max_retries - 1:
+                wait_time = retry_delay * (2 ** attempt)
+                print(f"⚠️  Rate limit hit (429). Waiting {wait_time}s before retry {attempt + 1}/{max_retries}...")
+                time.sleep(wait_time)
+                continue
+            raise
 
     result = response.json()
 
@@ -61,11 +95,22 @@ def generate_flashcards(text: str, count: int = 2) -> List[Dict[str, str]]:
         print("=======================================")
         raise RuntimeError("Could not parse Gemini response") from e
 
+    # Strip markdown code blocks if present (e.g., ```json ... ```)
+    output_text = output_text.strip()
+    if output_text.startswith("```"):
+        # Remove opening ```json or ```
+        lines = output_text.split("\n")
+        if lines[0].startswith("```"):
+            lines = lines[1:]
+        # Remove closing ```
+        if lines and lines[-1].strip() == "```":
+            lines = lines[:-1]
+        output_text = "\n".join(lines)
+
     try:
         cards = json.loads(output_text)
         if not isinstance(cards, list):
             raise ValueError("Model did not return a JSON list.")
-        # Basic validation: ensure question/answer exist
         cleaned: List[Dict[str, str]] = []
         for c in cards:
             if isinstance(c, dict) and "question" in c and "answer" in c:
@@ -78,14 +123,20 @@ def generate_flashcards(text: str, count: int = 2) -> List[Dict[str, str]]:
         raise
 
 
-def generate_flashcards_from_docs(max_chunks: int = 12, cards_per_chunk: int = 2) -> List[Dict[str, str]]:
+def generate_flashcards_from_docs(max_chunks: int = 5, cards_per_chunk: int = 2, delay_between_chunks: float = 1.0) -> List[Dict[str, str]]:
+    """
+    Generate flashcards from document chunks.
+    
+    Args:
+        max_chunks: Maximum number of chunks to process (default: 5 to avoid rate limits)
+        cards_per_chunk: Number of flashcards per chunk
+        delay_between_chunks: Delay in seconds between processing chunks (default: 1.0)
+    """
     docs = get_chunks()
     
-    # Select representative chunks from across the lecture for better coverage
     if len(docs) <= max_chunks:
         selected_docs = docs
     else:
-        # Select evenly distributed chunks across the lecture
         indices = [int(i * (len(docs) - 1) / (max_chunks - 1)) for i in range(max_chunks)]
         selected_docs = [docs[i] for i in indices]
     
@@ -95,6 +146,10 @@ def generate_flashcards_from_docs(max_chunks: int = 12, cards_per_chunk: int = 2
         cards = generate_flashcards(chunk_text, count=cards_per_chunk)
         flashcards.extend(cards)
         print(f"[OK] chunk {i+1}/{len(selected_docs)} -> {len(cards)} cards")
+        
+        # Add delay between chunks to avoid rate limiting (except for last chunk)
+        if i < len(selected_docs) - 1:
+            time.sleep(delay_between_chunks)
 
     return flashcards
 
