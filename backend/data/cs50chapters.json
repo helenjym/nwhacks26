@@ -1,0 +1,64 @@
+{
+  "chapters": [
+    {
+      "chapter_name": "Unrelated Audio Segment",
+      "start_time": 0.0,
+      "end_time": 59.9
+    },
+    {
+      "chapter_name": "CS50 Course Introduction",
+      "start_time": 59.9,
+      "end_time": 317.22
+    },
+    {
+      "chapter_name": "CS50 Traditions & Projects",
+      "start_time": 317.22,
+      "end_time": 511.86
+    },
+    {
+      "chapter_name": "Introduction to Computer Science",
+      "start_time": 511.86,
+      "end_time": 546.58
+    },
+    {
+      "chapter_name": "Binary Representation of Numbers",
+      "start_time": 546.58,
+      "end_time": 1433.06
+    },
+    {
+      "chapter_name": "Representing Text and Emojis",
+      "start_time": 1433.06,
+      "end_time": 2325.54
+    },
+    {
+      "chapter_name": "Representing Multimedia Data",
+      "start_time": 2325.54,
+      "end_time": 2839.46
+    },
+    {
+      "chapter_name": "Algorithms and Efficiency",
+      "start_time": 2839.46,
+      "end_time": 3555.14
+    },
+    {
+      "chapter_name": "Core Programming Concepts & AI",
+      "start_time": 3555.14,
+      "end_time": 4166.42
+    },
+    {
+      "chapter_name": "Scratch Programming Fundamentals",
+      "start_time": 4166.42,
+      "end_time": 5845.38
+    },
+    {
+      "chapter_name": "Interactive Scratch Programs",
+      "start_time": 5845.38,
+      "end_time": 6596.42
+    },
+    {
+      "chapter_name": "Advanced Scratch Games & Conclusion",
+      "start_time": 6596.42,
+      "end_time": 7129.58
+    }
+  ]
+}
