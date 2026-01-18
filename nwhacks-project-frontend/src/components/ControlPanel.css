@@ -1,10 +1,47 @@
 #control-panel {
-    width: 100vw;
-    height: 400px;
-    background-color: #f1f1f1;
-    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* gap: 10px; */
 }
 
 #video-upload{
     width: 10px;
+}
+
+#chapter-list {
+    padding: 0px;
+    width: 27vw;
+    height: 20vh;
+    border-radius: 20px;
+    background-color: rgb(255, 238, 216);
+    border: 0.5px solid #000000;
+    text-align: center;
+    margin-top: 6px;
+}
+
+ul {
+    list-style: none;
+    padding-top: 30px; /* Removes default padding */
+    margin: 0;  /* Removes default margin */
+    text-align: left; /* Aligns text to the left */
+}
+
+#chapters-title {
+    padding: 0px;
+    margin: 0px;
+    padding-top: 20px;
+    align-self: flex-start; /* Move title to the left in flex container */
+    text-align: left;       /* Ensure text is left-aligned */
+}
+
+#chatbot {
+    margin-top: 20px;
+    width: 27vw;
+    height: 52vh;
+    border-radius: 20px;
+    background-color: rgb(255, 238, 216);
+    border: 0.5px solid #000000;
+
 }

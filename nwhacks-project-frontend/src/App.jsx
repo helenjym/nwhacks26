@@ -24,7 +24,10 @@ function App() {
   return (
     <div id="app">
       <div id='left-panel'>
-        <input onChange={handleVideoUpload} accept="video/mp4" type='file'></input>
+        <label id="video-upload">
+          Upload Video
+          <input id="video-file-upload" onChange={handleVideoUpload} accept="video/mp4" type='file'></input>
+        </label>
         <ControlPanel chapters={chapters}/>
       </div>
       <div id='right-panel'>

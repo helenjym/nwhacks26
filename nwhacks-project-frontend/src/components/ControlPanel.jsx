@@ -1,18 +1,19 @@
 import './ControlPanel.css'
 
-// const chapters = [
-//     {time: "00:10", label: "Sample Marker 1"},
-//     {time: "00:30", label: "Sample Marker 2"},
-//     {time: "01:00", label: "Sample Marker 3"}
-// ]
-
 export default function ControlPanel({chapters}) {
     const chapterItems = chapters.map((chapter) => 
-        <li key={chapter.label}>{chapter.time}: {chapter.label}</li>
+        <li key={chapter.label}>{chapter.time} - {chapter.label}</li>
     ); 
     return (
-        <div>
-            <ul>{chapterItems}</ul>
+        <div id="control-panel">
+            <div id="chapters">
+                <p id="chapters-title">Chapters 📕</p>
+                <div id='chapter-list'>
+                    <ul>{chapterItems}</ul>
+                </div>
+            </div>
+            <div id="chatbot">
+            </div>
         </div>
     )
 }
