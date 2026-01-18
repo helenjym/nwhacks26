@@ -1,5 +1,3 @@
-# backend/routes/flashcard.py
-
 from dotenv import load_dotenv
 from typing import List, Dict, Any
 import json
@@ -7,11 +5,9 @@ import os
 import requests
 import time
 
-# Handle import for both module and standalone script usage
 try:
     from .chunkText import get_chunks
 except ImportError:
-    # Fallback for when running as standalone script
     import sys
     from pathlib import Path
     sys.path.insert(0, str(Path(__file__).parent.parent))
@@ -52,9 +48,8 @@ def generate_flashcards(text: str, count: int = 2) -> List[Dict[str, str]]:
         ]
     }
 
-    # Retry logic for rate limiting (429 errors)
     max_retries = 3
-    retry_delay = 2  # seconds
+    retry_delay = 2 
     
     for attempt in range(max_retries):
         try:
@@ -65,7 +60,6 @@ def generate_flashcards(text: str, count: int = 2) -> List[Dict[str, str]]:
                 timeout=60
             )
             
-            # If we get a 429, wait and retry
             if response.status_code == 429:
                 if attempt < max_retries - 1:
                     wait_time = retry_delay * (2 ** attempt)  # Exponential backoff
@@ -98,11 +92,9 @@ def generate_flashcards(text: str, count: int = 2) -> List[Dict[str, str]]:
     # Strip markdown code blocks if present (e.g., ```json ... ```)
     output_text = output_text.strip()
     if output_text.startswith("```"):
-        # Remove opening ```json or ```
         lines = output_text.split("\n")
         if lines[0].startswith("```"):
             lines = lines[1:]
-        # Remove closing ```
         if lines and lines[-1].strip() == "```":
             lines = lines[:-1]
         output_text = "\n".join(lines)

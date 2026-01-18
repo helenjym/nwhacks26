@@ -10,11 +10,10 @@ load_dotenv()
 
 # Get the backend directory (parent of routes directory)
 BACKEND_DIR = Path(__file__).parent.parent
-DEFAULT_TRANSCRIPT_PATH = BACKEND_DIR / "data" / "transcripts" / "transcription_text.txt"
-DEFAULT_SEGMENTS_PATH = BACKEND_DIR / "data" / "transcripts" / "transcription_segments.json"
+DEFAULT_TRANSCRIPT_PATH = BACKEND_DIR / "transcription_text.txt"
+DEFAULT_SEGMENTS_PATH = BACKEND_DIR / "transcription_segments.json"
 LOG_PATH = "/Users/stephaniechen/nwhacks26/.cursor/debug.log"
 
-# #region agent log
 def _log(hypothesis_id, location, message, data):
     try:
         import time
@@ -83,6 +82,48 @@ def get_chunks_from_segments(segments_path=None, chunk_size=15):
     _log("C", "chunkText.py:get_chunks_from_segments", "Created chunks from segments", {"chunk_count": len(docs), "chunk_size": chunk_size})
     # #endregion
     
+    return docs
+
+
+def get_chunks_from_text_simple(transcript_path=None, chunk_size_words: int = 200):
+    """
+    Fallback: Create simple text chunks by splitting transcript into word-based chunks.
+    Used when semantic chunking fails and segments file doesn't exist.
+    
+    Args:
+        transcript_path: Path to transcript text file. If None, uses default.
+        chunk_size_words: Approximate number of words per chunk.
+        
+    Returns:
+        List of LangChain Document objects.
+    """
+    if transcript_path is None:
+        transcript_path = DEFAULT_TRANSCRIPT_PATH
+    else:
+        transcript_path = Path(transcript_path)
+        if not transcript_path.is_absolute():
+            transcript_path = BACKEND_DIR / transcript_path
+    
+    if not transcript_path.exists():
+        raise FileNotFoundError(f"Transcript file not found: {transcript_path}")
+    
+    with open(transcript_path, "r", encoding="utf-8") as f:
+        transcript = f.read()
+    
+    # Split into words and create chunks
+    words = transcript.split()
+    docs = []
+    
+    for i in range(0, len(words), chunk_size_words):
+        chunk_words = words[i:i+chunk_size_words]
+        chunk_text = " ".join(chunk_words)
+        
+        docs.append(Document(
+            page_content=chunk_text,
+            metadata={"chunk_index": i // chunk_size_words, "word_start": i, "word_end": min(i + chunk_size_words, len(words))}
+        ))
+    
+    print(f"✓ Created {len(docs)} simple text chunks from transcript")
     return docs
 
 
@@ -165,7 +206,11 @@ def get_chunks(transcript_path=None):
             _log("C", "chunkText.py:get_chunks", "Quota error detected, using fallback", {})
             # #endregion
             print("⚠️  Semantic chunking failed due to API quota limits. Falling back to pre-chunked segments.")
-            return get_chunks_from_segments()
+            try:
+                return get_chunks_from_segments()
+            except FileNotFoundError:
+                print("⚠️  Segments file not found. Falling back to simple text chunking.")
+                return get_chunks_from_text_simple(transcript_path)
         else:
             # #region agent log
             _log("D", "chunkText.py:get_chunks", "Non-quota error, re-raising", {})
