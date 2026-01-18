@@ -1,0 +1,686 @@
+[
+    {
+        "id": 0,
+        "start": 0.0,
+        "end": 7.2,
+        "text": "The year is 2026. Your $3,500 smart fridge has a GPU and displays advertisements. Your boss is an AI."
+    },
+    {
+        "id": 1,
+        "start": 7.2,
+        "end": 12.24,
+        "text": "Your girlfriend is a robot, and every startup pitch sounds like Uber, but quantum. Welcome to the"
+    },
+    {
+        "id": 2,
+        "start": 12.24,
+        "end": 17.68,
+        "text": "future. It somehow both over-engineered and still in beta. But it's time for the annual tradition"
+    },
+    {
+        "id": 3,
+        "start": 17.68,
+        "end": 22.32,
+        "text": "where I wake up the vat of pre-cogs in my garage and tell you exactly what's going to happen this year."
+    },
+    {
+        "id": 4,
+        "start": 22.32,
+        "end": 26.4,
+        "text": "Last year I told you AI agents would be the biggest thing in tech. And if you would have just"
+    },
+    {
+        "id": 5,
+        "start": 26.4,
+        "end": 30.48,
+        "text": "listened to me, you'd be a billionaire right now. But you didn't listen. In fact, I didn't even"
+    },
+    {
+        "id": 6,
+        "start": 30.48,
+        "end": 34.96,
+        "text": "listen to myself, and now it's too late to front run this trend. But all is not lost. There's"
+    },
+    {
+        "id": 7,
+        "start": 34.96,
+        "end": 39.28,
+        "text": "some even bigger trends emerging in Silicon Valley right now, and as long as the record-breaking"
+    },
+    {
+        "id": 8,
+        "start": 39.28,
+        "end": 43.36,
+        "text": "stock market doesn't crash, there's an endless supply of money being thrown around that can still"
+    },
+    {
+        "id": 9,
+        "start": 43.36,
+        "end": 47.2,
+        "text": "make us all billionaires. In today's video, we'll look at 10 trends in technology,"
+    },
+    {
+        "id": 10,
+        "start": 47.2,
+        "end": 52.88,
+        "text": "covering everything from AI Slop to nuclear-powered quantum sex robots to new JavaScript framework"
+    },
+    {
+        "id": 11,
+        "start": 53.12,
+        "end": 57.92,
+        "text": "features that will finally make the world a better place. It is January 14th, 2026, and you're"
+    },
+    {
+        "id": 12,
+        "start": 57.92,
+        "end": 62.56,
+        "text": "watching the code report. Not everybody is cut out to become a billionaire AI griptor, but the next"
+    },
+    {
+        "id": 13,
+        "start": 62.56,
+        "end": 67.6,
+        "text": "best thing is landing a stable, high-paying job doing some honest software engineering work,"
+    },
+    {
+        "id": 14,
+        "start": 67.6,
+        "end": 73.6,
+        "text": "but will those jobs even exist in 2026? Unfortunately, the good old days of 2023 don't seem like"
+    },
+    {
+        "id": 15,
+        "start": 73.6,
+        "end": 78.64,
+        "text": "they're coming back. After the 2023 tech pullback and the rise of AI coding tools that followed,"
+    },
+    {
+        "id": 16,
+        "start": 78.64,
+        "end": 83.12,
+        "text": "the amount of job openings on Indeed 4 software engineers have not regained their original"
+    },
+    {
+        "id": 17,
+        "start": 83.12,
+        "end": 87.6,
+        "text": "glory, but this ominous looking chart doesn't tell the full story. On a more positive note,"
+    },
+    {
+        "id": 18,
+        "start": 87.6,
+        "end": 94.16,
+        "text": "the Bureau of Labor Statistics is still forecasting 15% software development job grow through 2034."
+    },
+    {
+        "id": 19,
+        "start": 94.16,
+        "end": 100.0,
+        "text": "In addition, back in September, a major change to the H1B program might be good news or bad news"
+    },
+    {
+        "id": 20,
+        "start": 100.0,
+        "end": 103.44,
+        "text": "depending on who you are. If you weren't lucky enough to be born in the United States,"
+    },
+    {
+        "id": 21,
+        "start": 103.44,
+        "end": 109.04,
+        "text": "you'll now have $100,000 fee to apply for an H1B visa, and that makes it far more difficult"
+    },
+    {
+        "id": 22,
+        "start": 109.04,
+        "end": 114.48,
+        "text": "for US-based tech companies to hire cheap labor from overseas. The good news though is that despite"
+    },
+    {
+        "id": 23,
+        "start": 114.48,
+        "end": 119.68,
+        "text": "what the optimist will tell you, AI coding tools are still nowhere close to replacing human engineers,"
+    },
+    {
+        "id": 24,
+        "start": 119.68,
+        "end": 124.16,
+        "text": "and I have zero fears that that's going to change in 2026. In fact, all the vibe coded"
+    },
+    {
+        "id": 25,
+        "start": 124.16,
+        "end": 128.8,
+        "text": "slop out there is creating a whole new class of jobs called code janitors who need to clean up all"
+    },
+    {
+        "id": 26,
+        "start": 128.8,
+        "end": 133.76,
+        "text": "the garbage code created by these AI tools. But where is AI itself headed? Everybody knows we're"
+    },
+    {
+        "id": 27,
+        "start": 133.76,
+        "end": 138.48,
+        "text": "in a bubble with valuations that make zero sense, but the question is are we at the peak of this"
+    },
+    {
+        "id": 28,
+        "start": 138.48,
+        "end": 142.88,
+        "text": "bubble or are we still another decade away from the peak? I'd argue that we still have at least"
+    },
+    {
+        "id": 29,
+        "start": 142.88,
+        "end": 148.08,
+        "text": "a few more years to keep this hype cycle alive. It's pretty obvious now that LLMs as a technology"
+    },
+    {
+        "id": 30,
+        "start": 148.08,
+        "end": 153.12,
+        "text": "have plateaued and are not actually intelligent. When GPT-5 came out a few months ago, it was a huge"
+    },
+    {
+        "id": 31,
+        "start": 153.12,
+        "end": 157.76,
+        "text": "disappointment, and we're not seeing the exponential leaps and intelligence that are truly intelligent,"
+    },
+    {
+        "id": 32,
+        "start": 157.76,
+        "end": 162.48,
+        "text": "self-improving AI systems should be able to make. But don't get me wrong though, the current AI"
+    },
+    {
+        "id": 33,
+        "start": 162.48,
+        "end": 167.36,
+        "text": "technology is legit amazing. Remember, we're only a few years into this trend. A programmers were"
+    },
+    {
+        "id": 34,
+        "start": 167.36,
+        "end": 171.76,
+        "text": "the early adopters of the prompt casino, but there are companies out there working day and night to"
+    },
+    {
+        "id": 35,
+        "start": 171.76,
+        "end": 176.24,
+        "text": "replace stupid, smelly, squishy humans, and if you're someone who does spreadsheets for a living"
+    },
+    {
+        "id": 36,
+        "start": 176.24,
+        "end": 181.12,
+        "text": "is a mid-level manager, or even a graphic designer, you might no longer be necessary in the future."
+    },
+    {
+        "id": 37,
+        "start": 181.12,
+        "end": 185.2,
+        "text": "AI is definitely stacking up victims in the job market, and even activities that were once"
+    },
+    {
+        "id": 38,
+        "start": 185.2,
+        "end": 190.08,
+        "text": "respected, like being a stack overflow poster are now completely dead, just as I predicted a few"
+    },
+    {
+        "id": 39,
+        "start": 190.08,
+        "end": 194.56,
+        "text": "years ago. But another sign that bubbles not over yet is the fact that most AI companies are still"
+    },
+    {
+        "id": 40,
+        "start": 194.56,
+        "end": 199.44,
+        "text": "private. Eventually a time will come when you see a wave of IPOs in the stock market to hand these"
+    },
+    {
+        "id": 41,
+        "start": 199.44,
+        "end": 204.32,
+        "text": "bags from VCs over to the public, and when that wave of IPOs arrives, you'll know the charade is"
+    },
+    {
+        "id": 42,
+        "start": 204.32,
+        "end": 209.44,
+        "text": "coming to an end. And there's a good chance that wave comes in 2026. This SpaceX, OpenAI,"
+    },
+    {
+        "id": 43,
+        "start": 209.44,
+        "end": 214.08,
+        "text": "and Anthropic are all looking to go public with some of the biggest IPOs in the history of the world."
+    },
+    {
+        "id": 44,
+        "start": 214.08,
+        "end": 219.28,
+        "text": "But before that happens, one of the biggest drivers to keep the AI hype going in 2026 will be"
+    },
+    {
+        "id": 45,
+        "start": 219.28,
+        "end": 224.88,
+        "text": "robots, humanoid robots. Just a few weeks ago, one X started taking orders for their Neo robot,"
+    },
+    {
+        "id": 46,
+        "start": 224.88,
+        "end": 229.36,
+        "text": "which can do your laundry, wash your dishes, and just be a friendly, helpful slave that will never"
+    },
+    {
+        "id": 47,
+        "start": 229.36,
+        "end": 234.8,
+        "text": "rebel. In addition, figure robots and Tesla Optimus are being pushed as replacements for manual"
+    },
+    {
+        "id": 48,
+        "start": 234.8,
+        "end": 239.92,
+        "text": "labor and factories. As of today, the tech is still pretty bad and requires a lot of teleoperation,"
+    },
+    {
+        "id": 49,
+        "start": 240.0,
+        "end": 244.88,
+        "text": "but companies like Google and Nvidia are providing the base technology that allows any founder to"
+    },
+    {
+        "id": 50,
+        "start": 244.88,
+        "end": 249.68,
+        "text": "Frankenstein together, some clinker, and raise a bunch of money. 2026 is the year we'll finally"
+    },
+    {
+        "id": 51,
+        "start": 249.68,
+        "end": 253.92,
+        "text": "see these things roll off of assembly lines. But what if you could turn yourself into a robot"
+    },
+    {
+        "id": 52,
+        "start": 253.92,
+        "end": 258.64,
+        "text": "or cyborg? Well, wearable AI tech is another big trend to watch for. We've already had massive"
+    },
+    {
+        "id": 53,
+        "start": 258.64,
+        "end": 264.24,
+        "text": "flops like the Rabbit and Humane pin, but OpenAI is still in collaboration with Johnny Ive to make"
+    },
+    {
+        "id": 54,
+        "start": 264.24,
+        "end": 268.64,
+        "text": "some wearable that will actually be good this time. Or so they say, in addition, you've got old"
+    },
+    {
+        "id": 55,
+        "start": 268.64,
+        "end": 273.2,
+        "text": "companies like Nike, building things like battery powered shoes, that will finally allow the"
+    },
+    {
+        "id": 56,
+        "start": 273.2,
+        "end": 277.44,
+        "text": "white man to jump. And I can't wait for the NBA to approve this and see dudes dunking from half"
+    },
+    {
+        "id": 57,
+        "start": 277.44,
+        "end": 281.92,
+        "text": "court. But until that day comes, I'd rather just get my entertainment from virtual worlds in my"
+    },
+    {
+        "id": 58,
+        "start": 281.92,
+        "end": 287.44,
+        "text": "VR headset. The Apple Vision Pro was supposed to finally make virtual reality mainstream, but as I"
+    },
+    {
+        "id": 59,
+        "start": 287.44,
+        "end": 291.68,
+        "text": "correctly predicted, it was a massive flop. I got a lot of hate from Apple fanboys for making"
+    },
+    {
+        "id": 60,
+        "start": 291.68,
+        "end": 296.24,
+        "text": "that prediction, but it's not over for the Vision Pro. There are rumors of a lower cost version in"
+    },
+    {
+        "id": 61,
+        "start": 296.32,
+        "end": 301.44,
+        "text": "the works that could turn this flop around. Meanwhile, meta is making huge investments in augmented"
+    },
+    {
+        "id": 62,
+        "start": 301.44,
+        "end": 307.2,
+        "text": "reality, but ultimately, I think the VR AR space will mostly remain an unprofitable niche area,"
+    },
+    {
+        "id": 63,
+        "start": 307.2,
+        "end": 311.28,
+        "text": "even though the tech itself is extremely impressive. But the lion's share of the profits are going"
+    },
+    {
+        "id": 64,
+        "start": 311.28,
+        "end": 316.72,
+        "text": "to continue flowing into chip designers like Nvidia and ARM, and chip fabricators like Taiwan"
+    },
+    {
+        "id": 65,
+        "start": 316.72,
+        "end": 322.64,
+        "text": "semiconductor. AI Mania has created an insatiable demand for linear algebra, and the barriers to entry"
+    },
+    {
+        "id": 66,
+        "start": 322.72,
+        "end": 326.96,
+        "text": "in this industry are so high that these companies will continue to slurp up most of the profit."
+    },
+    {
+        "id": 67,
+        "start": 326.96,
+        "end": 331.76,
+        "text": "The only company that really screwed things up is Intel, which is both a chip designer and a fab."
+    },
+    {
+        "id": 68,
+        "start": 331.76,
+        "end": 336.8,
+        "text": "And in 2025, it looked like it was on the verge of going out of business, but luckily, Trump stepped"
+    },
+    {
+        "id": 69,
+        "start": 336.8,
+        "end": 342.08,
+        "text": "in and had the US government by a 10% stake in Intel, thus preventing the free market from working"
+    },
+    {
+        "id": 70,
+        "start": 342.08,
+        "end": 347.84,
+        "text": "like a free market, and Intel is poised to continue its turnaround in 2026. It's just too big to fail,"
+    },
+    {
+        "id": 71,
+        "start": 347.84,
+        "end": 352.8,
+        "text": "but cloud providers like Azure are having a hard time even finding enough electricity to plug"
+    },
+    {
+        "id": 72,
+        "start": 352.8,
+        "end": 358.64,
+        "text": "in their Nvidia GPUs. As demand for AI scales up, it could lead to a resurgence and nuclear power."
+    },
+    {
+        "id": 73,
+        "start": 358.64,
+        "end": 362.96,
+        "text": "Even as many countries in the West start to dismantle their reactors. China, on the other hand,"
+    },
+    {
+        "id": 74,
+        "start": 362.96,
+        "end": 367.6,
+        "text": "is building all kinds of new reactors, but there are companies like Auklo, which are attempting to"
+    },
+    {
+        "id": 75,
+        "start": 367.6,
+        "end": 372.88,
+        "text": "get regulatory approval for these small modular reactors, which could potentially give every data"
+    },
+    {
+        "id": 76,
+        "start": 372.88,
+        "end": 377.84,
+        "text": "center its own self-contained power source. Instead of acres of these ugly intermittent solar"
+    },
+    {
+        "id": 77,
+        "start": 377.84,
+        "end": 382.24,
+        "text": "farms or wind farms, the future might have these tiny little reactors in every neighborhood,"
+    },
+    {
+        "id": 78,
+        "start": 382.24,
+        "end": 386.24,
+        "text": "what could possibly go wrong. And we're already seeing this play out, with Zuckerberg announcing"
+    },
+    {
+        "id": 79,
+        "start": 386.24,
+        "end": 390.8,
+        "text": "a big deal with Auklo to put a reactor in Ohio. But maybe this trend will never play out,"
+    },
+    {
+        "id": 80,
+        "start": 390.8,
+        "end": 396.08,
+        "text": "because computers get colder and faster. Like billions of times faster, running at absolute zero"
+    },
+    {
+        "id": 81,
+        "start": 396.08,
+        "end": 401.68,
+        "text": "temperatures. In 2025, we saw some major advancements in quantum computing, most notably with Google's"
+    },
+    {
+        "id": 82,
+        "start": 402.48,
+        "end": 406.56,
+        "text": "Willow chip. Then, just a few months ago, Google announced its quantum ECHO's algorithm that"
+    },
+    {
+        "id": 83,
+        "start": 406.56,
+        "end": 411.52,
+        "text": "measures disturbances at the subatomic scale. The first time in history, a quantum computer has"
+    },
+    {
+        "id": 84,
+        "start": 411.52,
+        "end": 416.08,
+        "text": "actually run a verifiable algorithm that surpasses the ability of supercomputers."
+    },
+    {
+        "id": 85,
+        "start": 416.08,
+        "end": 420.08,
+        "text": "The quantum computers have been in development for decades now, but what's exciting is that we're"
+    },
+    {
+        "id": 86,
+        "start": 420.08,
+        "end": 424.64,
+        "text": "finally starting to see the possibility of practical applications in the real world. When quantum"
+    },
+    {
+        "id": 87,
+        "start": 424.64,
+        "end": 429.44,
+        "text": "computing hits version 1.0, it'll make the AI bubble look like child's play, and American and"
+    },
+    {
+        "id": 88,
+        "start": 429.44,
+        "end": 434.24,
+        "text": "Chinese researchers are racing to get there first. But European tech leaders are also making big"
+    },
+    {
+        "id": 89,
+        "start": 434.24,
+        "end": 438.4,
+        "text": "strides in technology, especially when it comes to water bottle caps, and with the highly"
+    },
+    {
+        "id": 90,
+        "start": 438.4,
+        "end": 444.08,
+        "text": "unpopular digital IDs, along with central bank back digital currencies. Despite nobody actually"
+    },
+    {
+        "id": 91,
+        "start": 444.08,
+        "end": 448.4,
+        "text": "wanting these things, bureaucrats keep pushing them forward, like it's a speedrun to the Black"
+    },
+    {
+        "id": 92,
+        "start": 448.4,
+        "end": 452.96,
+        "text": "Mirror season finale. In the near future, every government and door smartphone will become a portal"
+    },
+    {
+        "id": 93,
+        "start": 452.96,
+        "end": 458.24,
+        "text": "to your bank account, your location, your social media posts, your adult website visits, and so on."
+    },
+    {
+        "id": 94,
+        "start": 458.32,
+        "end": 463.12,
+        "text": "The UK has been adamant that digital IDs are coming, while the European Central Bank recently"
+    },
+    {
+        "id": 95,
+        "start": 463.12,
+        "end": 467.92,
+        "text": "announced that the Eurozone's digital Euro pilot is moving into its next phase, with the pilot"
+    },
+    {
+        "id": 96,
+        "start": 467.92,
+        "end": 474.08,
+        "text": "program expected as soon as mid-2027, and full issuance of a digital currency by 2029. They can"
+    },
+    {
+        "id": 97,
+        "start": 474.08,
+        "end": 478.4,
+        "text": "take our lives and they can take our freedom, but they can't take our JavaScript. On the back"
+    },
+    {
+        "id": 98,
+        "start": 478.4,
+        "end": 483.04,
+        "text": "end, no JS keeps getting better and better, and now supports TypeScript files with TypeScript"
+    },
+    {
+        "id": 99,
+        "start": 483.28,
+        "end": 487.12,
+        "text": "in. Meanwhile, Dino keeps getting better, and now has its own built-in module bunpler."
+    },
+    {
+        "id": 100,
+        "start": 487.12,
+        "end": 491.6,
+        "text": "But all the kids these days are talking about bun JS, a runtime that keeps getting faster,"
+    },
+    {
+        "id": 101,
+        "start": 491.6,
+        "end": 496.16,
+        "text": "but also has built-in support for Postgres and Redis, making it a very tempting choice for"
+    },
+    {
+        "id": 102,
+        "start": 496.16,
+        "end": 500.72,
+        "text": "any new JavaScript project. On the front end, React JS still dominates despite the fact that"
+    },
+    {
+        "id": 103,
+        "start": 500.72,
+        "end": 505.44,
+        "text": "sucks, but in the future it will suck less now that the compiler is officially stable. I'd still"
+    },
+    {
+        "id": 104,
+        "start": 505.44,
+        "end": 509.76,
+        "text": "take Svelter View, or f**k it even angular over React, but there's still new JavaScript's"
+    },
+    {
+        "id": 105,
+        "start": 509.76,
+        "end": 514.16,
+        "text": "hitting the scene like Ripple, which should be on your radar in 2026. But if you're looking"
+    },
+    {
+        "id": 106,
+        "start": 514.16,
+        "end": 518.48,
+        "text": "to level up your skills this year, you need to check out Brilliant, the sponsor of today's video."
+    },
+    {
+        "id": 107,
+        "start": 518.48,
+        "end": 522.8,
+        "text": "I'd highly recommend there how AI workscores, which teaches you how to build a functioning"
+    },
+    {
+        "id": 108,
+        "start": 522.8,
+        "end": 527.12,
+        "text": "language model from scratch. You'll get to experiment with things like feature vectors to"
+    },
+    {
+        "id": 109,
+        "start": 527.12,
+        "end": 531.92,
+        "text": "edit facial expressions and images, along with other hands-on lessons that are personalized to your"
+    },
+    {
+        "id": 110,
+        "start": 531.92,
+        "end": 536.8,
+        "text": "skill level, so you can master challenging topics over time. Check out brilliant.org slash"
+    },
+    {
+        "id": 111,
+        "start": 536.8,
+        "end": 542.48,
+        "text": "fireship to learn for free for a full 30 days, or scan the QR code on screen to get 20% off an"
+    },
+    {
+        "id": 112,
+        "start": 542.48,
+        "end": 547.04,
+        "text": "annual premium subscription with unlimited daily access. This has been the co-report,"
+    },
+    {
+        "id": 113,
+        "start": 547.04,
+        "end": 549.92,
+        "text": "thanks for watching, and I will see you in the next one."
+    }
+]
