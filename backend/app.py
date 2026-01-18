@@ -9,9 +9,11 @@ from werkzeug.utils import secure_filename
 from video2transcript import transcribe_video, save_transcript
 from chapterize import generate_chapters, save_chapters_to_file
 from summarize import initialize_chat, generate_summary, send_chat_message
+from flask_cors import CORS
 
 # Initialize Flask app
 app = Flask(__name__, template_folder='templates')
+CORS(app)
 
 # Configuration
 UPLOAD_FOLDER = 'data/videos'

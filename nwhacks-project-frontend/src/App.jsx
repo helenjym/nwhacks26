@@ -16,7 +16,6 @@ function App() {
     console.log(url);
     setVideoSrc(url);
     
-
     try {
       const formData = new FormData();
       formData.append('video', file);
